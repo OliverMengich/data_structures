@@ -51,10 +51,26 @@ class HashTable{
         }
         return undefined
     }
+    get keys(){
+        let allkeys: string[]=[];
+        for (let i = 0; i < this.data.length; i++) {
+            // check if item exists
+            if (this.data[i]){
+                //if the item exists, loop into the item and extract the keys
+                let buckt: unknown[] = this.data[i];
+                for (let j = 0; j < buckt.length; j++) {
+                    allkeys.push(buckt[j][1])
+                    
+                }
+            }
+        }
+        return allkeys;
+    }
 }
 const myhashTable = new HashTable(50);
 console.log(myhashTable.set('grapes',10000));
 console.log(myhashTable.set('apples',800));
 console.log(myhashTable.get('apples'))
+console.log(myhashTable.keys)
 //sets-> adds to this.data
 //gets-> retrieves from this.data

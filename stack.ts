@@ -25,7 +25,16 @@ class Stack implements IStack{
         return this.stack[this.length-1]
     }
 }
+var ANStack  = class extends Stack{
+    constructor(data: number[]){
+        super(data)
+        console.log(this);
+    }
+}
 var newStack = new Stack([]);
 newStack.push(4);
 console.log(newStack.push(5))
 console.log(newStack.stacks);
+
+var anStack = new ANStack([6,2,6,2,9,7,0,1,4]);
+anStack.push(5)
