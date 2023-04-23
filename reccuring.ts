@@ -1,4 +1,6 @@
 function findOccurence(array:number[]) {
+    // this function has a time complexity of O(n^2) 
+    //and a space complexity of O(1)
     let newArray: typeof array=[];
     for (let i = 0; i < array.length; i++) {
         for (let j = i+1; j < array.length; j++) {
@@ -11,6 +13,8 @@ function findOccurence(array:number[]) {
     return undefined
 }
 function findOccurence1(array: number[]){
+    // this function has a time complexity of O(n) 
+    //and a space complexity of O(n)
     let map:{[number: number]: number} = {};
     for (let i = 0; i < array.length; i++) {
         if (map[array[i]] !== undefined){
